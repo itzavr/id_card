@@ -150,6 +150,56 @@
         .preview-container:hover .click-hint {
             opacity: 1;
         }
+
+                .legend {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #4a90e2;
+        }
+        .legend h3 {
+            margin-bottom: 12px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        .legend-item:hover {
+            background-color: #f0f0f0;
+        }
+        .color-sample {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 12px;
+            border: 1px solid #ddd;
+        }
+        .color-red {
+            background-color: #ff0000;
+        }
+        .color-orange {
+            background-color: #ffa500;
+        }
+        .color-yellow {
+            background-color: #ffd700;
+        }
+        .legend-text {
+            flex: 1;
+            font-size: 14px;
+        }
+        .emoji {
+            font-size: 16px;
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
@@ -175,6 +225,29 @@
             <div class="control-group">
                 <label for="opacity-control">Прозрачность рамки: <span id="opacity-value" class="value-display">50%</span></label>
                 <input type="range" id="opacity-control" min="0" max="100" value="50">
+
+                            </div>
+            
+            <div class="legend">
+                <h3>📋 Легенда цветов рамки</h3>
+                <div class="legend-item">
+                    <div class="color-sample color-red"></div>
+                    <div class="legend-text">
+                        <span class="emoji">✂️</span> <strong>Красная рамка (2 мм)</strong> - зона реза. На этой области должен быть только фон, так как она будет обрезана при печати.
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="color-sample color-orange"></div>
+                    <div class="legend-text">
+                        <span class="emoji">⚠️</span> <strong>Оранжевая рамка (1 мм)</strong> - резервная зона. Важные элементы не должны приближаться к этой границе.
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="color-sample color-yellow"></div>
+                    <div class="legend-text">
+                        <span class="emoji">💡</span> <strong>Жёлтая рамка (2 мм)</strong> - внутренняя рамка для контента. На эту область желательно "не залазить" важными элементами.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
